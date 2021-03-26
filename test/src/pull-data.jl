@@ -16,6 +16,10 @@ y = "cases_daily",
 colour = "county",
 Geom.point
 )
+
+gso = @chain dat begin
+    @where in(["Guilford", "Forsyth"]).(:"county")
+    @byrow
 end
 
 @chain dat begin
